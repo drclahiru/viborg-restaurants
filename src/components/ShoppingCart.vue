@@ -23,7 +23,7 @@
 import { defineComponent } from "vue";
 import axios from "axios";
 import ShoppingCartItem from "./ShoppingCartItem.vue";
-import { useOrderStore } from "../stores/order";
+import { useOrderStore } from "@/stores/order";
 
 export default defineComponent({
   name: "ShoppingCart",

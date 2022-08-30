@@ -5,24 +5,24 @@
     </h3>
     <p>{{ item.category }}</p>
     <p>{{ item.price }}</p>
-    <hr class="line">
+    <hr class="line" />
   </div>
 </template>
 
 <script  lang="ts">
-import { defineComponent } from "vue";
-import { useOrderStore } from "../stores/order";
+import { defineComponent, PropType } from "vue";
+import { useOrderStore, OrderItemType } from "@/stores/order";
 
 export default defineComponent({
   name: "MenuItem",
   props: {
-    item: Object,
+    item: Object as PropType<OrderItemType>,
   },
   data() {
     return { order: useOrderStore() };
   },
   methods: {
-    addOrder(item: Object) {
+    addOrder(item: OrderItemType) {
       useOrderStore().create(item);
     },
   },
